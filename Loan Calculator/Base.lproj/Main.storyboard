@@ -1,24 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Loan_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0se-zO-VX6">
+                                <rect key="frame" x="5" y="49" width="404" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Interest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sie-V0-vyk">
+                                <rect key="frame" x="10" y="235.5" width="394" height="39.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Months" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lOx-cf-R4Y">
+                                <rect key="frame" x="10" y="338" width="175.5" height="40"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvA-MX-iTt">
+                                <rect key="frame" x="132.5" y="408" width="149.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EmK-Cb-XGq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Calculate">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onCalc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0e3-Ix-IC3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5N-xw-qCU">
+                                <rect key="frame" x="10" y="101" width="394" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ew2-gh-1tW">
+                                <rect key="frame" x="10" y="195.5" width="394" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Term" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqw-2g-2Fo">
+                                <rect key="frame" x="10" y="293" width="394" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Loan Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7tB-dG-1eu">
+                                <rect key="frame" x="10" y="141" width="394" height="39.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eaH-Z1-ve0">
+                                <rect key="frame" x="195.5" y="342.5" width="208.5" height="32"/>
+                                <segments>
+                                    <segment title="Months"/>
+                                    <segment title="Years"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly Payments:  $30,000.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0E2-1O-gDJ">
+                                <rect key="frame" x="10" y="478" width="394" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interest Paid: $10,000,000.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHA-pk-DlR">
+                                <rect key="frame" x="10" y="538" width="394" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Paid: $10,000,000,000.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyD-wu-I1T">
+                                <rect key="frame" x="10" y="598" width="394" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oHA-pk-DlR" secondAttribute="trailing" constant="10" id="12e-uu-9AC"/>
+                            <constraint firstItem="0E2-1O-gDJ" firstAttribute="top" secondItem="fvA-MX-iTt" secondAttribute="bottom" constant="20" id="4QY-eO-O0D"/>
+                            <constraint firstItem="oHA-pk-DlR" firstAttribute="top" secondItem="0E2-1O-gDJ" secondAttribute="bottom" constant="30" id="5dP-bG-8Uk"/>
+                            <constraint firstItem="RyD-wu-I1T" firstAttribute="top" secondItem="oHA-pk-DlR" secondAttribute="bottom" constant="30" id="6lU-Zh-l9H"/>
+                            <constraint firstItem="J5N-xw-qCU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="80B-Ky-OpF"/>
+                            <constraint firstItem="Mqw-2g-2Fo" firstAttribute="top" secondItem="Sie-V0-vyk" secondAttribute="bottom" constant="18" id="HTS-VP-Upi"/>
+                            <constraint firstItem="Mqw-2g-2Fo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="I9F-aa-t6g"/>
+                            <constraint firstItem="fvA-MX-iTt" firstAttribute="top" secondItem="lOx-cf-R4Y" secondAttribute="bottom" constant="30" id="IPP-NX-bgA"/>
+                            <constraint firstItem="eaH-Z1-ve0" firstAttribute="centerY" secondItem="lOx-cf-R4Y" secondAttribute="centerY" id="Iux-OL-PZf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0E2-1O-gDJ" secondAttribute="trailing" constant="10" id="Iz3-Ib-ZMA"/>
+                            <constraint firstItem="lOx-cf-R4Y" firstAttribute="top" secondItem="Mqw-2g-2Fo" secondAttribute="bottom" constant="15" id="Jqt-uV-31Q"/>
+                            <constraint firstItem="7tB-dG-1eu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Jqx-Mc-fRQ"/>
+                            <constraint firstAttribute="trailing" secondItem="RyD-wu-I1T" secondAttribute="trailing" constant="10" id="K0e-G5-ary"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0se-zO-VX6" secondAttribute="trailing" constant="5" id="LV6-VW-J3d"/>
+                            <constraint firstItem="J5N-xw-qCU" firstAttribute="top" secondItem="0se-zO-VX6" secondAttribute="bottom" constant="15" id="Loh-eg-84g"/>
+                            <constraint firstItem="0se-zO-VX6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="MvB-eO-HuX"/>
+                            <constraint firstItem="fvA-MX-iTt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N2Y-fP-P8c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J5N-xw-qCU" secondAttribute="trailing" constant="10" id="NU5-gd-pXO"/>
+                            <constraint firstItem="0E2-1O-gDJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="QAI-fT-Y0M"/>
+                            <constraint firstItem="Sie-V0-vyk" firstAttribute="top" secondItem="ew2-gh-1tW" secondAttribute="bottom" constant="10" id="VQZ-wA-Pwd"/>
+                            <constraint firstItem="oHA-pk-DlR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="WCy-jM-cgO"/>
+                            <constraint firstItem="7tB-dG-1eu" firstAttribute="top" secondItem="J5N-xw-qCU" secondAttribute="bottom" constant="10" id="Ydm-WM-tWe"/>
+                            <constraint firstItem="Sie-V0-vyk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Zzg-ti-f1f"/>
+                            <constraint firstItem="0se-zO-VX6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="a3d-Lh-HoG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sie-V0-vyk" secondAttribute="trailing" constant="10" id="br7-mA-ViK"/>
+                            <constraint firstItem="ew2-gh-1tW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="kVu-qf-6dO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eaH-Z1-ve0" secondAttribute="trailing" constant="10" id="ksA-7I-IbX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ew2-gh-1tW" secondAttribute="trailing" constant="10" id="mYj-9i-29F"/>
+                            <constraint firstItem="ew2-gh-1tW" firstAttribute="top" secondItem="7tB-dG-1eu" secondAttribute="bottom" constant="15" id="t96-ki-yjm"/>
+                            <constraint firstItem="lOx-cf-R4Y" firstAttribute="width" secondItem="eaH-Z1-ve0" secondAttribute="width" multiplier="0.839695" id="uZ6-Zb-Pea"/>
+                            <constraint firstItem="eaH-Z1-ve0" firstAttribute="leading" secondItem="lOx-cf-R4Y" secondAttribute="trailing" constant="10" id="vyM-Ha-ssZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7tB-dG-1eu" secondAttribute="trailing" constant="10" id="wXQ-Im-9hE"/>
+                            <constraint firstItem="lOx-cf-R4Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="yFb-az-Sia"/>
+                            <constraint firstItem="RyD-wu-I1T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="yKV-Eu-W6n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mqw-2g-2Fo" secondAttribute="trailing" constant="10" id="yqg-Jh-VYw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountTextField" destination="7tB-dG-1eu" id="rys-df-Q2A"/>
+                        <outlet property="interestPaidLabel" destination="oHA-pk-DlR" id="j4h-rS-xR4"/>
+                        <outlet property="interestTextField" destination="Sie-V0-vyk" id="OhN-kH-tSL"/>
+                        <outlet property="monthYearSegmentControl" destination="eaH-Z1-ve0" id="aeT-Ln-xfP"/>
+                        <outlet property="monthlyPaymentLabel" destination="0E2-1O-gDJ" id="ULo-kV-fXW"/>
+                        <outlet property="termTextField" destination="lOx-cf-R4Y" id="LES-cY-77x"/>
+                        <outlet property="totalPaidLabel" destination="RyD-wu-I1T" id="O8w-NS-5Uu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
