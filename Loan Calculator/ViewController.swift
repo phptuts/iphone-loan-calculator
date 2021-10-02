@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var interestPaidLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         totalPaidLabel.isHidden = true
         interestPaidLabel.isHidden = true
         monthlyPaymentLabel.isHidden = true
@@ -86,3 +87,16 @@ class ViewController: UIViewController {
     }
 }
 
+
+// https://stackoverflow.com/a/27079103
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
